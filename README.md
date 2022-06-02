@@ -1,2 +1,3 @@
 # weather_api
-Aplicativo de previsão do tempo.
+
+ <img style="border-radius: 50%;" src="./assets/Tempo.png" width="250px;" alt=""/>
