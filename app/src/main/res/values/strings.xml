@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">weather_api</string>
+    <string name="weather_api">Weather API</string>
+    <string name="tutorial_txt">Digite o nome da cidade e seu estado,\n exemplo : Campinas, SP</string>
+    <string name="search">Pesquisar</string>
+    <string name="city_name">Resende, RJ</string>
+    <string name="temperature_city">18°C</string>
+    <string name="txt_climate">Tempo nublado</string>
+    <string name="hour">09:17</string>
+    <string name="humidity">Umidade</string>
+    <string name="humidity_porcentage">91 %</string>
+    <string name="wind_velocity">Vel. vento</string>
+    <string name="wind_velocity_kmh">1.18km</string>
+    <string name="sunset">Pôr do sol</string>
+    <string name="sunset_hour">05:21 pm</string>
+    <string name="sunrise">Nascer do Sol</string>
+    <string name="sunrise_hour">06:30 am</string>
+</resources>
