@@ -16,6 +16,10 @@ import com.voltaire.weather_api.databinding.ActivitySearchByCityBinding
 import com.voltaire.weather_api.models.Forecast
 import com.voltaire.weather_api.models.Result
 import com.voltaire.weather_api.presenter.MainPresenter
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,7 +39,10 @@ class MainActivity : AppCompatActivity() {
         presenter = MainPresenter(this)
 
         cState = intent.getStringExtra("cState").toString()
-        presenter.findResult(cState)
+
+        CoroutineScope(Dispatchers.IO).launch {
+            getInformation()
+        }
     }
 
     override fun onStart() {
@@ -71,5 +78,13 @@ class MainActivity : AppCompatActivity() {
 
     fun hideProgress() {
         binding.loading.visibility = View.INVISIBLE
+    }
+
+    private suspend fun getInformation() {
+        try {
+            presenter.findResult(cState)
+        } catch (e : Exception) {
+            Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+        }
     }
 }

@@ -47,9 +47,9 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="60dp"
             android:fontFamily="@font/quicksand"
-            android:text="@string/city_name"
             android:textColor="#FFFFFF"
-            android:textSize="36sp" />
+            android:textSize="36sp"
+            tools:text="@string/city_name" />
 
         <TextView
             android:id="@+id/temperature_city"
@@ -74,7 +74,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/quicksand"
-            android:text="@string/txt_climate"
+            tools:text="@string/description_day"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -96,10 +96,10 @@
             android:layout_alignEnd="@id/image_day"
             android:layout_toEndOf="@+id/txt_climate"
             android:fontFamily="@font/quicksand"
-            android:text="@string/hour"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="@string/hour" />
 
     </RelativeLayout>
 
