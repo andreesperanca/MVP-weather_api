@@ -5,27 +5,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="center"
+        android:id="@+id/loading"
+        android:visibility="visible"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:lottie_rawRes="@raw/loading"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:backgroundTint="@color/white" />
 
     <RelativeLayout
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/drawable_main_top"
+        android:id="@+id/rLay_top"
         android:layout_width="match_parent"
-        android:layout_height="260dp">
+        android:layout_height="300dp"
+        android:background="@drawable/drawable_main_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:src="@drawable/ic_back" />
 
         <TextView
             android:id="@+id/city_name"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:textColor="#FFFFFF"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="60dp"
             android:fontFamily="@font/quicksand"
             android:text="@string/city_name"
-            android:textSize="36sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:textColor="#FFFFFF"
+            android:textSize="36sp" />
 
         <TextView
             android:id="@+id/temperature_city"
@@ -43,7 +67,6 @@
 
         <TextView
             android:id="@+id/txt_climate"
-            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/temperature_city"
@@ -53,7 +76,8 @@
             android:fontFamily="@font/quicksand"
             android:text="@string/txt_climate"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/image_day"
@@ -65,7 +89,6 @@
 
         <TextView
             android:id="@+id/hour"
-            android:textAlignment="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/image_day"
@@ -74,21 +97,67 @@
             android:layout_toEndOf="@+id/txt_climate"
             android:fontFamily="@font/quicksand"
             android:text="@string/hour"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:id="@+id/lLay_center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/rLay_bottom"
+        app:layout_constraintTop_toBottomOf="@id/rLay_top">
 
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/quicksand"
+                android:text="@string/prediction"
+                android:textColor="@color/gray"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/btnReload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/reload" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            tools:itemCount="1"
+            tools:listitem="@layout/forecast_item"/>
+
+    </LinearLayout>
 
     <RelativeLayout
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/rLay_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/drawable_main_bottom"
+        app:layout_constraintTop_toBottomOf="@id/lLay_center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/drawable_main_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="270dp">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="140dp"
@@ -103,11 +172,11 @@
             android:padding="15dp">
 
             <TextView
-                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand"
                 android:text="@string/humidity"
+                android:textAlignment="center"
                 android:textSize="17sp" />
 
             <LinearLayout
@@ -121,6 +190,7 @@
                     android:src="@drawable/ic_humitity" />
 
                 <TextView
+                    android:id="@+id/humitity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -144,11 +214,11 @@
             android:padding="15dp">
 
             <TextView
-                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand"
                 android:text="@string/wind_velocity"
+                android:textAlignment="center"
                 android:textSize="17sp" />
 
             <LinearLayout
@@ -162,6 +232,7 @@
                     android:src="@drawable/ic_wind_velocity" />
 
                 <TextView
+                    android:id="@+id/windVelocity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -203,6 +274,7 @@
                     android:src="@drawable/ic_sunset" />
 
                 <TextView
+                    android:id="@+id/sunsetHour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -216,9 +288,9 @@
         <LinearLayout
             android:layout_width="140dp"
             android:layout_height="100dp"
-            android:layout_margin="25dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
+            android:layout_margin="25dp"
             android:background="@drawable/drawable_items_bottom"
             android:orientation="vertical"
             android:padding="14sp">
@@ -241,6 +313,7 @@
                     android:src="@drawable/ic_sunrise" />
 
                 <TextView
+                    android:id="@+id/sunriseHour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -253,6 +326,5 @@
 
 
     </RelativeLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

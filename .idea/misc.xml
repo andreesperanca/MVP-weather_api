@@ -6,13 +6,15 @@
         <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/drawable-v24/drawable_main_bottom.xml" value="0.2" />
         <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/drawable/animation.xml" value="0.136" />
         <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/drawable/btn_form.xml" value="0.136" />
+        <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/drawable/drawable_forecast_item.xml" value="0.1835" />
         <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/drawable/drawable_init.xml" value="0.136" />
         <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/drawable/drawable_items_bottom.xml" value="0.2105" />
         <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/drawable/drawable_main_top.xml" value="0.2055" />
         <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/drawable/edit_text.xml" value="0.136" />
         <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/font/fonts.xml" value="0.23333333333333334" />
-        <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/layout/activity_search_by_city.xml" value="0.25" />
+        <entry key="..\:/GitHub Projects/weather_api/app/src/main/res/layout/forecast_item.xml" value="0.67" />
       </map>
     </option>
   </component>

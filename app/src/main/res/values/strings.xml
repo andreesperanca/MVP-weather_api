@@ -4,7 +4,7 @@
     <string name="tutorial_txt">Digite o nome da cidade e seu estado,\n exemplo : Campinas, SP</string>
     <string name="search">Pesquisar</string>
     <string name="city_name">Resende, RJ</string>
-    <string name="temperature_city">18°C</string>
+    <string name="temperatureMax_city">Máx %1$s°C</string>
     <string name="txt_climate">Tempo nublado</string>
     <string name="hour">09:17</string>
     <string name="humidity">Umidade</string>
@@ -15,4 +15,13 @@
     <string name="sunset_hour">05:21 pm</string>
     <string name="sunrise">Nascer do Sol</string>
     <string name="sunrise_hour">06:30 am</string>
+    <string name="prev">Previsão</string>
+    <string name="prediction">Previsão</string>
+    <string name="reload">Renovar</string>
+    <string name="day">Qua</string>
+    <string name="date">02/06</string>
+    <string name="description_day">Chuvas esparsas</string>
+    <string name="temperatureMin_city">Mín %1$s°C</string>
+    <string name="temperature_city">%1$s°C</string>
+    <string name="invalidV">Digite como no exemplo : Município, Estado</string>
 </resources>
